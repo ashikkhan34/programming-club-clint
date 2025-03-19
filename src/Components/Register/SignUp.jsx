@@ -16,7 +16,7 @@ const image_hosting_api = `https://api.imgbb.com/1/upload?key=${image_hosting_ke
 const SignUp = () => {
     const axiosPublic = useAxiosPublic()
     const navigate = useNavigate()
-    const { createUser, updateUserProfile } = useAuth()
+    const { createUser, updateUserProfile ,emailVerification} = useAuth()
     const [showPass, setShowPass] = useState()
     const {
         register,
@@ -38,7 +38,11 @@ const SignUp = () => {
             .then(result => {
                 const loggedUser = result.user;
                 console.log(loggedUser)
-                updateUserProfile(data?.name,  res.data?.data?.url, data.photoURL)
+                emailVerification()
+                .then(()=>{
+                    console.log('email verification send')
+                })
+                updateUserProfile(data?.name,  res.data?.data?.url, data.photo)
                     .then((result) => {
                         console.log('result data',result)
                         //create user entry in the database
@@ -110,9 +114,6 @@ const SignUp = () => {
                                         showPass ? <FaEye></FaEye> : <FaEyeSlash></FaEyeSlash>
                                     }
                                 </button>
-                                <label className="label">
-                                    <a href="#" className="text-white  link link-hover">Forgot password?</a>
-                                </label>
                                 {errors.password?.type === "required" && (
                                     <p className='text-red-500'>Password is required</p>
                                 )}

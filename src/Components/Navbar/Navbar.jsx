@@ -58,7 +58,6 @@ export default function Navbar() {
                                 </div>
                                 <ul tabIndex={0} className="dropdown-content menu bg-base-100 rounded-box z-1 w-52 p-4 shadow-sm">
                                     <li><button  onClick={handleLogOut}>LogOut</button></li>
-                                    <li><button>Updata Profile</button></li>
                                 </ul>
                             </div>
 

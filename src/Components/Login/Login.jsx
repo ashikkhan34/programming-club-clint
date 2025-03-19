@@ -1,4 +1,4 @@
-import React, { useState } from 'react'
+import React, {  useState } from 'react'
 import { useForm } from 'react-hook-form'
 import { FaEye, FaEyeSlash } from 'react-icons/fa'
 import { Link, useLocation, useNavigate } from 'react-router-dom'
@@ -6,7 +6,8 @@ import useAuth from '../../Hooks/useAuth'
 import GoogleLogin from '../GoogleLogin/GoogleLogin'
 
 export default function Login() {
-    const {signIn} = useAuth()
+    // const emailRef = useRef()
+    const {signIn,forgatPassword} = useAuth()
     const navigate = useNavigate()
     const location = useLocation()
     const [error, setError] = useState()
@@ -16,20 +17,43 @@ export default function Login() {
         register,
         handleSubmit,
         reset,
-        formState: { errors },
+        watch,
+        
     } = useForm()
     const onSubmit = (data) => {
         signIn(data.email, data.password)
             .then(result => {
                 const loggedUser = result.user;
+                if(result.user.emailVerified){
+                    return 
+                }else{
+                    alert('Login Success')
+                }
                 console.log(loggedUser)
-                reset()
+                
                 // toast.success('login su')
             })
             .catch(error => {
                 setError(error.message)
             })
+            reset()
         navigate(from, { replace: true })
+    }
+    // password forger .................
+    const handleForgetPassword = () => {
+        console.log('forget password')
+        const email =  watch('email')
+        console.log(email)
+
+        if(!email){
+            console.log('Please provide a valid Email')
+        }
+        else{
+            forgatPassword(email)
+            .then(()=>{
+                alert('Password reset email send,Please check your email')
+            })
+        }
     }
     return (
         <div>
@@ -61,22 +85,10 @@ export default function Login() {
                                         showPass ? <FaEye></FaEye> : <FaEyeSlash></FaEyeSlash>
                                     }
                                 </button>
-                                <label className="label">
+                                <label onClick={handleForgetPassword} className="label">
                                     <a href="#" className="label-text-alt link link-hover">Forgot password?</a>
                                 </label>
-                                {errors.password?.type === "required" && (
-                                    <p className='text-red-500'>Password is required</p>
-                                )}
-                                {errors.password?.type === "minLength" && (
-                                    <p className='text-red-500'>Password must be 6 characters</p>
-                                )}
-                                {errors.password?.type === "pattern" && (
-                                    <p className='text-red-500'>Password must be 1 uppercase 1 lowercase 1 special character and 1 number</p>
-                                )}
-                                {errors.password?.type === "maxLength" && (
-                                    <p className='text-red-500'>Password less then 20 characters</p>
-                                )}
-                                <p className='text-red-600'>{error}</p>
+                                <p className='text-red-600'>{error?.massage}</p>
                             </div>
                             <div className="form-control mt-6">
                                 <button className="btn btn-primary">Login</button>

@@ -1,6 +1,7 @@
 import React from 'react'
 import { FaJoint } from 'react-icons/fa'
 import img from '../../assets/19.jpg'
+import { Link } from 'react-router-dom'
 
 export default function Home() {
     return (
@@ -8,7 +9,7 @@ export default function Home() {
             <div className="hero bg-lime-100 min-h-screen">
                 <div className="hero-content flex-col lg:flex-row-reverse">
                     <img
-                    data-aos="fade-left"
+                        data-aos="fade-left"
                         src={img}
                         className=" max-w-sm rounded-lg shadow-2xl" />
                     <div data-aos="fade-right">
@@ -17,7 +18,9 @@ export default function Home() {
                             Provident cupiditate voluptatem et in. Quaerat fugiat ut assumenda excepturi exercitationem
                             quasi. In deleniti eaque aut repudiandae et a id nisi.
                         </p>
-                        <button className="btn btn-primary">Join Us <FaJoint></FaJoint> </button>
+                        <Link to='/signUp'>
+                            <button className="btn btn-primary">Join Us <FaJoint></FaJoint> </button>
+                        </Link>
                     </div>
                 </div>
             </div>
