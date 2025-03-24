@@ -16,7 +16,7 @@ export default function Home() {
                     <motion.h1 
                         animate={{x:50}}
                         transition={{duration:2, delay:1 , ease: easeInOut, repeat:Infinity}}
-                        className="text-5xl font-bold">Develop your <motion.span 
+                        className="md:text-5xl text-2xl font-bold">Develop your <motion.span 
                         animate={{color:['#cc00cc','#009933','#000099']}}
                         transition={{duration:1.5, repeat:Infinity}}
                         >Skills</motion.span> in a new and unique way</motion.h1>

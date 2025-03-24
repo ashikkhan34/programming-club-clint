@@ -35,12 +35,12 @@ export default function AboutClub() {
                     src={img}
                     animate={{y: [50,100,50]}}
                     transition={{duration:10,repeat:Infinity}}
-                        className="max-w-sm w-64 rounded-t-[40px] rounded-br-[40px] shadow-2xl border-l-4 border-b-4 border-blue-700" />
+                        className="max-w-sm w-48 md:w-64 rounded-t-[40px] rounded-br-[40px] shadow-2xl border-l-4 border-b-4 border-blue-700" />
                     <motion.img
                     src={img1}
                     animate={{x: [100,150,100]}}
                     transition={{duration:10,repeat:Infinity}}
-                        className="max-w-sm w-64 rounded-t-[40px] rounded-br-[40px] shadow-2xl border-l-4 border-b-4 border-red-700" />
+                        className="max-w-sm w-48 md:w-64 rounded-t-[40px] rounded-br-[40px] shadow-2xl border-l-4 border-b-4 border-red-700" />
                     </div>
 
         </div>

@@ -5,10 +5,10 @@ import { Link } from 'react-router-dom'
 
 export default function About() {
   return (
-    <div className='container mx-auto pt-16'>
+    <div className=' pt-16 '>
 
       <div
-        className="hero min-h-screen "
+        className="hero min-h-screen"
         style={{
           backgroundImage: "url(https://i.ibb.co.com/YT7CRLqG/abstract-dark-blue-futuristic-digital-grid-background.jpg)",
         }}>

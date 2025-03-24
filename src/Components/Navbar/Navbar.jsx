@@ -28,7 +28,7 @@ export default function Navbar() {
     }
     return (
         <div>
-            <div className="navbar shadow-sm fixed z-20  top-0 w-full bg-opacity-50 bg-linear-to-r/hsl from-indigo-500 to-teal-400 ">
+            <div className="navbar fixed z-20  top-0  bg-cyan-500 ">
                 <div className="navbar-start">
                     <div className="dropdown">
                         <div tabIndex={0} role="button" className="btn btn-ghost lg:hidden">
@@ -36,12 +36,12 @@ export default function Navbar() {
                         </div>
                         <ul
                             tabIndex={0}
-                            className="menu menu-sm dropdown-content bg-base-100 rounded-box z-1 mt-3 w-52 p-2 shadow">
+                            className="menu menu-sm dropdown-content bg-blue-950 rounded-box z-1 mt-3 w-52 p-2 shadow">
                             {links}
 
                         </ul>
                     </div>
-                    <Link><img className='w-10 ' src={logo} alt="" /></Link>
+                    <Link><img className='w-10 md:ml-4' src={logo} alt="" /></Link>
                 </div>
                 <div className="navbar-center hidden lg:flex">
                     <ul className="menu menu-horizontal px-1">
@@ -51,15 +51,15 @@ export default function Navbar() {
                 <div className="navbar-end">
                     {
                         user ? <>
-                            <p className=' text-blue-500 font-serif md:text-xl '>{user?.displayName}</p>
+                            <p className=' text-white font-serif md:text-xl '>{user?.displayName}</p>
                             {/* <p>{user?.email}</p> */}
                             {/* <img className='w-10 h-10 rounded-full mr-3' src={user?.photoURL} alt="" /> */}
 
                             
 
                             <div className="dropdown dropdown-hover">
-                                <div tabIndex={0} role="button" className=" mr-4">
-                                <img className='w-10 h-10 rounded-full mr-3' src={user?.photoURL} alt="" />
+                                <div tabIndex={0} role="button" className=" mr-10">
+                                <img className='w-10 h-10 rounded-full mr-20 md:mr-0' src={user?.photoURL} alt="" />
                                 </div>
                                 <ul tabIndex={0} className="dropdown-content menu bg-base-100 rounded-box z-1 w-52 p-4 shadow-sm">
                                     <li><button  onClick={handleLogOut}>LogOut</button></li>
@@ -71,7 +71,7 @@ export default function Navbar() {
 
                             <>
                                 <Link to='/signUp'>
-                                    <a href="#_" class="relative inline-flex items-center justify-center px-4 py-2 overflow-hidden font-mono font-medium tracking-tighter text-white bg-blue-500 rounded-lg group">
+                                    <a href="#_" class="relative inline-flex items-center justify-center px-4 mr-16 py-2 overflow-hidden font-mono font-medium tracking-tighter text-white bg-blue-500 rounded-lg group">
                                         <span class="absolute w-0 h-0 transition-all duration-500 ease-out bg-green-500 rounded-full group-hover:w-56 group-hover:h-56"></span>
                                         <span class="absolute inset-0 w-full h-full -mt-1 rounded-lg opacity-30 bg-gradient-to-b from-transparent via-transparent to-gray-700"></span>
                                         <span class="relative">Join Us</span>

@@ -37,15 +37,15 @@ export default function AdminHome() {
       })
   return (
     <div>
-      <div className='bg-blue-950 h-16'>
-        <h1 className='text-2xl text-center py-3'>Welcome to Admin Home <span className='text-blue-600'>{user?.displayName}</span></h1>
+      <div className='bg-blue-950 top-0 w-full md:h-16'>
+        <h1 className='md:text-2xl text-center p-5'>Welcome to Admin Home <span className='text-blue-600'>{user?.displayName}</span></h1>
 
       </div>
 
-      <div className="stats shadow  md:ml-40 text-white">
+      <div className="md:stats block shadow  text-white">
         <div className="stat">
           <div className="stat-figure text-primary">
-           <FaUsers className='text-2xl'></FaUsers>
+           <FaUsers className='text-2xl -ml-32 md:-ml-0'></FaUsers>
           </div>
           <div className="stat-title text-cyan-400">Total Users</div>
           <div className="stat-value text-primary">{users.length}</div>
@@ -54,7 +54,7 @@ export default function AdminHome() {
 
         <div className="stat">
           <div className="stat-figure text-secondary">
-          <FaUsers className='text-2xl'></FaUsers>
+          <FaUsers className='text-2xl -ml-32 md:-ml-0'></FaUsers>
 
           </div>
           <div className="stat-title text-cyan-400">All Members</div>
@@ -65,7 +65,7 @@ export default function AdminHome() {
         <div className="stat">
           <div className="stat-figure text-secondary">
             <div className="avatar online">
-              <div className="w-16 rounded-full">
+              <div className="w-16 rounded-full -ml-32 md:-ml-0">
                 <img src={user?.photoURL} />
               </div>
             </div>
