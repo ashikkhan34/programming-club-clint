@@ -4,7 +4,7 @@ import { FaLink } from 'react-icons/fa6'
 export default function ProjectCard({ project }) {
     return (
         <div>
-            <div className="card bg-base-100 mb-2 shadow-xl mt-5 h-[400px] transition-all duration-700 ease-in-out  hover:bg-gray-200 hover:rounded-4xl">
+            <div className="card bg-indigo-900 mb-2 shadow-xl mt-5 h-[400px] transition-all duration-700 ease-in-out text-white hover:text-black hover:bg-cyan-500 hover:rounded-4xl">
                 <figure>
                     <img
                     className='h-40 '

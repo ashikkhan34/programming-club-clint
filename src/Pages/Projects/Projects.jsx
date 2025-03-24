@@ -18,7 +18,7 @@ export default function Projects() {
       <div className='h-14 bg-linear-to-r/hsl from-indigo-500 to-teal-400'>
         <h1 className='text-xl flex justify-center text-center py-3 font-bold'>All Projects : {projects.length} <FaDiagramProject className='ml-2 mt-2'></FaDiagramProject></h1>
       </div>
-      <div className='grid md:grid-cols-2 lg:grid-cols-3 gap-5'>
+      <div className='grid md:grid-cols-2 lg:grid-cols-3 gap-5 bg-blue-950'>
               {projects.map((project) => (
                 <ProjectCard key={project._id} project={project}></ProjectCard>
               ))}

@@ -37,19 +37,19 @@ export default function AdminHome() {
       })
   return (
     <div>
-      <div className='bg-gray-200 h-16'>
+      <div className='bg-blue-950 h-16'>
         <h1 className='text-2xl text-center py-3'>Welcome to Admin Home <span className='text-blue-600'>{user?.displayName}</span></h1>
 
       </div>
 
-      <div className="stats shadow  md:ml-40">
+      <div className="stats shadow  md:ml-40 text-white">
         <div className="stat">
           <div className="stat-figure text-primary">
            <FaUsers className='text-2xl'></FaUsers>
           </div>
-          <div className="stat-title">Total Users</div>
+          <div className="stat-title text-cyan-400">Total Users</div>
           <div className="stat-value text-primary">{users.length}</div>
-          <div className="stat-desc">21% more than last month</div>
+          <div className="stat-desc text-cyan-400">21% more than last month</div>
         </div>
 
         <div className="stat">
@@ -57,9 +57,9 @@ export default function AdminHome() {
           <FaUsers className='text-2xl'></FaUsers>
 
           </div>
-          <div className="stat-title">All Members</div>
+          <div className="stat-title text-cyan-400">All Members</div>
           <div className="stat-value text-secondary">{members.length}</div>
-          <div className="stat-desc">21% more than last month</div>
+          <div className="stat-desc text-cyan-400">21% more than last month</div>
         </div>
 
         <div className="stat">
@@ -71,8 +71,8 @@ export default function AdminHome() {
             </div>
           </div>
           <div className="stat-value">{projects.length}</div>
-          <div className="stat-title">Projects done</div>
-          <div className="stat-desc text-secondary">31 tasks remaining</div>
+          <div className="stat-title text-cyan-400">Projects done</div>
+          <div className="stat-desc text-secondary ">31 tasks remaining</div>
         </div>
 
         

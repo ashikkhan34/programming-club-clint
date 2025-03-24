@@ -3,7 +3,7 @@ import React from 'react'
 export default function MemberCard({ member }) {
     return (
         <div>
-            <div className="transition-all duration-700 ease-in-out card hover:bg-gray-200 hover:rounded-4xl  bg-purple-100 shadow-sm mt-5 mb-2 ">
+            <div className="transition-all duration-700 ease-in-out card hover:bg-purple-900 hover:rounded-4xl  bg-gray-800 text-white hover:text-red-700  shadow-sm mt-5 mb-2 ">
                 <figure>
                     <img
                         src={member?.image}

@@ -48,22 +48,22 @@ const AddProject = () => {
     }
     return (
         <div >
-            <div className='h-14 w-full text-center items-center bg-pink-100'>
-                <h1 className='py-4 text-pink-950 font-bold'>Add a Project for out Club</h1>
+            <div className='h-14 w-full text-center items-center bg-blue-900'>
+                <h1 className='py-4 text-cyan-400 font-bold'>Add a Project for out Club</h1>
             </div>
-            <div className='border-gray-300 p-4 rounded-xl w-full md:w-[600px] mx-auto shadow-2xl mt-10 '>
+            <div className='border-gray-300 bg-blue-950 px-8 rounded-xl w-full md:w-[600px] mx-auto shadow-2xl mt-10 '>
                 <form onSubmit={handleSubmit(onSubmit)}>
                     <label className="form-control w-full">
                         <div className="label">
                             <span className="label-text">Project Name*</span>
                         </div>
-                        <input type="text" placeholder=" ProjectName" className="input input-bordered w-full " {...register('projectName',{required:true})} />
+                        <input type="text" placeholder=" ProjectName" className="input input-bordered w-full bg-blue-950 text-white " {...register('projectName',{required:true})} />
                     </label>
                     <label className="form-control w-full">
                         <div className="label">
                             <span className="label-text">Project Category*</span>
                         </div>
-                        <input type="text" placeholder="Web App, Mobile App, API, SaaS" className="input input-bordered w-full " {...register('ProjectCategory',{required:true})} />
+                        <input type="text" placeholder="Web App, Mobile App, API, SaaS" className="input input-bordered w-full bg-blue-950 text-white " {...register('ProjectCategory',{required:true})} />
                     </label>
                     <div className=' gap-3'>
                         <label className="form-control w-full">
@@ -83,13 +83,13 @@ const AddProject = () => {
                             <div className="label">
                                 <span className="label-text">Live Link*</span>
                             </div>
-                            <input type="url" placeholder="Live Link" className="input input-bordered w-full " {...register('liveLink',{required:true})} />
+                            <input type="url" placeholder="Live Link" className="input input-bordered w-full bg-blue-950 text-white " {...register('liveLink',{required:true})} />
                         </label>
                         <label className="form-control w-full">
                             <div className="label">
                                 <span className="label-text">Tech Stack*</span>
                             </div>
-                            <input type="text" placeholder="React js , Node js , Mongo DB" className="input input-bordered w-full " {...register('techStack',{required:true})} />
+                            <input type="text" placeholder="React js , Node js , Mongo DB" className="input input-bordered w-full bg-blue-950 text-white " {...register('techStack',{required:true})} />
                         </label>
                     </div>
                     <div className='mt-3'>

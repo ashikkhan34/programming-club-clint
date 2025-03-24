@@ -6,6 +6,7 @@ import SignUp from "../Components/Register/SignUp";
 import Members from "../Pages/Members/Members";
 import About from "../Pages/About/About";
 import Events from "../Pages/Events/Events";
+import RegisterEvent from '../Pages/Events/RegisterEvent'
 import Blog from "../Pages/Blog/Blog";
 import Contact from "../Components/Contact/Contact";
 import Projects from "../Pages/Projects/Projects";
@@ -20,11 +21,16 @@ import DeleteMember from "../AdminComponents/AddMember/DeleteMember";
 import UpdateMember from "../AdminComponents/AddMember/UpdateMember";
 import DeleteEvent from "../AdminComponents/AddEvents/DeleteEvent";
 import UpdateEvent from "../AdminComponents/AddEvents/UpdateEvent";
+import ReviewMore from "../Components/Review/ReviewMore";
+import Error from "../Components/Error/Error";
+import PrivateRoute from "../Components/PrivateRoute/PrivateRoute";
+import AdminRoute from "../Components/AdminRoute/AdminRoute";
 
 const router = createBrowserRouter([
     {
       path: "/",
       element: <MainLayOut></MainLayOut>,
+      errorElement:<Error></Error>,
       children:[
         {
             path:'/',
@@ -36,7 +42,7 @@ const router = createBrowserRouter([
         },
         {
           path:'events',
-          element:<Events></Events>
+          element:<PrivateRoute><Events></Events></PrivateRoute>
         },
         {
           path:'blog',
@@ -61,53 +67,61 @@ const router = createBrowserRouter([
         {
           path:'contact',
           element:<Contact></Contact>
+        },
+        {
+          path:'/reviewMore',
+          element:<ReviewMore></ReviewMore>
+        },
+        {
+          path:'registerEvent',
+          element:<RegisterEvent></RegisterEvent>
         }
       ]
     },
     {
       path:'dashboard',
-      element:<Dashboard></Dashboard>,
+      element:<PrivateRoute><Dashboard></Dashboard></PrivateRoute>,
       children:[
         {
           path:'adminHome',
-          element:<AdminHome></AdminHome>
+          element:<AdminRoute><AdminHome></AdminHome></AdminRoute>
         },
         {
           path:'users',
-          element:<AllUsers></AllUsers>
+          element:<AdminRoute><AllUsers></AllUsers></AdminRoute>
         },
         {
           path:'addMember',
-          element:<AddMember></AddMember>
+          element:<AdminRoute><AddMember></AddMember></AdminRoute>
         },
         {
           path:'addEvents',
-          element:<AddEvents></AddEvents>
+          element:<AdminRoute><AddEvents></AddEvents></AdminRoute>
         },
         {
           path:'addProject',
-          element:<AddProject></AddProject>
+          element:<AdminRoute><AddProject></AddProject></AdminRoute>
         },
         {
           path:'addBlog',
-          element:<AddBlog></AddBlog>
+          element:<AdminRoute><AddBlog></AddBlog></AdminRoute>
         },
         {
           path:'deleteMember',
-          element:<DeleteMember></DeleteMember>
+          element:<AdminRoute><DeleteMember></DeleteMember></AdminRoute>
         },
         {
           path:'updateMember/:id',
-          element:<UpdateMember></UpdateMember>,
+          element:<AdminRoute><UpdateMember></UpdateMember></AdminRoute>,
           loader:({params})=>fetch(`http://localhost:4000/members/${params.id}`)
         },
         {
           path:'deleteEvent',
-          element:<DeleteEvent></DeleteEvent>
+          element:<AdminRoute><DeleteEvent></DeleteEvent></AdminRoute>
         },
         {
           path:'updateEvent/:id',
-          element:<UpdateEvent></UpdateEvent>,
+          element:<AdminRoute><UpdateEvent></UpdateEvent></AdminRoute>,
           loader:({params})=>fetch(`http://localhost:4000/events/${params.id}`)
         }
       ]

@@ -57,16 +57,16 @@ export default function AllUsers() {
     }
     return (
         <div >
-            <div className='mb-6 top-0 w-full h-12 bg-green-100 '>
+            <div className='mb-6 top-0 w-full h-12 bg-blue-950 '>
                 <h1 className='py-3 text-lg font-bold  items-center flex justify-center'>All Users: {users.length} <FaUsers className='ml-3 text-xl'></FaUsers> </h1>
             </div>
 
             <div>
-                <div className="overflow-x-auto">
-                    <table className="table hover">
+                <div className="overflow-x-auto text-white">
+                    <table className="table">
                         {/* head */}
                         <thead>
-                            <tr>
+                            <tr className='text-gray-400'>
                                 <th>No.</th>
                                 <th>Photo</th>
                                 <th>Name</th>
@@ -77,7 +77,7 @@ export default function AllUsers() {
                         </thead>
                         <tbody >
                             {
-                                users.map((user,index) => <tr key={user._id} className='hover:bg-slate-100'>
+                                users.map((user,index) => <tr key={user._id} className='hover:bg-blue-900'>
                                     <th>{index + 1}</th>
                                     <td>
                                         <div className="flex items-center gap-3">

@@ -9,8 +9,8 @@ export default function Dashboard() {
     return (
         <div className='flex flex-col md:flex-row min-h-screen'>
             {/* Sidebar */}
-            <div className='w-full md:w-64 bg-amber-300 p-4 md:min-h-screen'>
-                <ul className="menu text-black space-y-2">
+            <div className='w-full md:w-64 bg-blue-950  p-4 md:min-h-screen'>
+                <ul className="menu text-white space-y-2">
                     <li><NavLink to='/dashboard/adminHome' className='flex items-center gap-2'><FaHome /> Admin Home </NavLink></li>
                     <li><NavLink to='/dashboard/addMember' className='flex items-center gap-2'><FaAddressBook /> Add Member </NavLink></li>
                     <li><NavLink to='/dashboard/users' className='flex items-center gap-2'><FaUsers /> All Users </NavLink></li>
@@ -28,7 +28,7 @@ export default function Dashboard() {
             </div>
 
             {/* Main Content */}
-            <div className='flex-1 p-4'>
+            <div className='flex-1 bg-indigo-950 text-gray-300 p-4'>
                 <Outlet />
             </div>
         </div>

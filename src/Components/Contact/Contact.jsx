@@ -2,16 +2,19 @@ import React from 'react'
 import ashik from '../../assets/gallery-photos/ashik.png'
 import { MdMore } from 'react-icons/md'
 import joy from '../../assets/joy.jpg'
+import { FaFacebook, FaGithub, FaLinkedin } from 'react-icons/fa'
 
 export default function Contact() {
   return (
     <div>
       <div className='mt-16'>
-        <div className="hero bg-yellow-100 min-h-screen">
+        <div className="hero bg-gradient-to-r from-indigo-500 from-10% via-sky-500 via-30% to-emerald-500 to-90% min-h-screen">
           <div className="hero-content flex-col lg:flex-row-reverse">
             <img
+              data-aos="fade-left"
+              data-aos-duration="3000"
               src={ashik}
-              className="border-b-4 border-amber-400 drop-shadow-xl rounded-b-full" />
+              className="border-b-4 border-blue-400 drop-shadow-xl rounded-b-full" />
             <div data-aos="fade-up"
               data-aos-duration="3000" className='p-5'>
               <h1 className="text-5xl font-bold">Ashik khan</h1>
@@ -20,20 +23,32 @@ export default function Contact() {
 
                 Additionally, I am lead a team and have built a website for your college's programming club. I am also interested in analyzing search data and have  some full-stack website.
               </p>
-              <button className="btn bg-yellow-300 hover:bg-amber-500"><a href="https://ashikkhan404.surge.sh/" target='_blank'>About more</a> <MdMore></MdMore></button>
+              <div className='flex gap-2'>
+                <button className="btn bg-blue-500 hover:bg-blue-900 text-white"><a href="https://ashikkhan404.surge.sh/" target='_blank'>About more</a> <MdMore></MdMore></button>
+                <div className='bg-blue-300 hover:bg-purple-300 shadow rounded-xl hover:rounded-3xl   h-10 w-52'>
+
+                  <div className='flex justify-evenly items-center  py-2'>
+                    <a href="https://www.facebook.com/profile.php?id=100069225215551" target='_blank' className='text-2xl text-blue-600 shadow-2xl'><FaFacebook className='shadow-2xl'></FaFacebook></a>
+
+                    <a href="https://www.linkedin.com/in/ashik-khan-44abbb300/" target='_blank' className='text-2xl text-blue-600 shadow-2xl'> <FaLinkedin></FaLinkedin></a>
+
+                    <a href="https://github.com/ashikkhan34" className='text-2xl text-gray-600 shadow-2xl' target='_blank'> <FaGithub></FaGithub></a>
+                  </div>
+                </div>
+              </div>
             </div>
           </div>
         </div>
-        <div className="hero bg-purple-200 min-h-screen">
+        <div className="hero bg-linear-to-r/hsl from-indigo-500 to-teal-400 min-h-screen">
           <div className="hero-content flex-col lg:flex-row">
             <img
               src={joy}
               className="max-w-lg rounded-lg shadow-2xl" />
             <div data-aos="fade-up"
-              data-aos-duration="3000"  className='ml-20'>
+              data-aos-duration="3000" className='ml-20'>
               <h1 className="text-5xl font-bold">Md. Joy Rahman</h1>
               <p className="py-6">
-                I am Md.Joy Rahman . I am a Student of Pabna Polytechnic Institute , Department of Computer Science and technology (CST).
+                Md. Joy Rahman, a dedicated student of Computer Science and Technology (CST) at Pabna Polytechnic Institute, is passionate about technology and innovation. With a strong foundation in programming and software development, he is continuously exploring new advancements in the field. His interests range from web development and database management to problem-solving and system design. As a driven and enthusiastic learner, he actively engages in projects that enhance his skills and knowledge. Md. Joy Rahman is always eager to learn, adapt, and contribute to the ever-evolving world of technology.
               </p>
               <button className="btn btn-primary"><a href="https://www.facebook.com/Loser.J02" target='_blank'>About More</a></button>
             </div>

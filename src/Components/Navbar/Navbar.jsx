@@ -3,9 +3,11 @@ import { Link, NavLink } from 'react-router-dom'
 import logo from "../../assets/logo-1.png"
 import useAuth from '../../Hooks/useAuth'
 import './navbar.css'
+import useAdmin from '../../Hooks/useAdmin'
 
 export default function Navbar() {
     const { user,logOut } = useAuth()
+    const [isAdmin] = useAdmin()
     const links = <>
         <NavLink to='/'><li><a>Home</a></li></NavLink>
         <NavLink to='/about'><li><a>About Us</a></li></NavLink>
@@ -14,6 +16,9 @@ export default function Navbar() {
         <NavLink to='/members'><li><a>Membership</a></li></NavLink>
         <NavLink to='/blog'><li><a>Photo Gallery</a></li></NavLink>
         <NavLink to='/contact'><li><a>Contact Us</a></li></NavLink>
+        {
+            user && isAdmin && <NavLink to='/dashboard/adminHome'><li ><a >Admin Home</a></li></NavLink>
+        }
 
     </>
     const handleLogOut = () => {
@@ -23,7 +28,7 @@ export default function Navbar() {
     }
     return (
         <div>
-            <div className="navbar shadow-sm fixed z-20  top-0 w-full bg-opacity-50 ">
+            <div className="navbar shadow-sm fixed z-20  top-0 w-full bg-opacity-50 bg-linear-to-r/hsl from-indigo-500 to-teal-400 ">
                 <div className="navbar-start">
                     <div className="dropdown">
                         <div tabIndex={0} role="button" className="btn btn-ghost lg:hidden">

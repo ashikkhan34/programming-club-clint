@@ -1,11 +1,13 @@
 import React from 'react'
 import img from '../../assets/room.jfif'
+import { motion } from "motion/react"
+// import { easeInOut } from 'motion';
 import img1 from '../../assets/course/wd-1.jpg'
 export default function AboutClub() {
     return (
-        <div className='md:flex gap-5 p-9 bg-green-100 mb-8'>
+        <div className='md:flex gap-5 p-9 bg-linear-to-r/hsl from-indigo-500 to-teal-400 '>
             <div data-aos="fade-up"
-                data-aos-duration="3000" className='w-4/6 bg-green-200 p-4 rounded-2xl'>
+                data-aos-duration="3000" className='md:w-4/6 bg-gradient-to-r from-indigo-500 from-10% via-sky-500 via-30% to-emerald-500 to-90%p-4 rounded-2xl p-5 text-white'>
                 <h1 className='text-2xl'> About the Club</h1>
                 <p>Our Programming Club is an educational and collaborative platform where students can enhance their skills in coding, software development, and technology. The club helps students improve their programming abilities, work on real-world projects, and excel in competitive programming.</p>
                 <h1 className='text-2xl'> Our Mission & Vision</h1>
@@ -26,12 +28,20 @@ export default function AboutClub() {
                 </div>
             </div>
 
-            <div data-aos="fade-left"
-                data-aos-offset="300"
-                data-aos-easing="ease-in-sine" className='w-2/6 relative '>
-                < img className='rounded-t-full mt-8 ml-8 border-cyan-500 border-4 border-dotted p-2 ' src={img} alt="" />
-                <img className='rounded-t-full w-64 ml-28 border-green-200 border-8 absolute -mt-32 ' src={img1} alt="" />
-            </div>
+
+             {/* Right Side - Image */}
+             <div className='flex-1'>
+                    <motion.img
+                    src={img}
+                    animate={{y: [50,100,50]}}
+                    transition={{duration:10,repeat:Infinity}}
+                        className="max-w-sm w-64 rounded-t-[40px] rounded-br-[40px] shadow-2xl border-l-4 border-b-4 border-blue-700" />
+                    <motion.img
+                    src={img1}
+                    animate={{x: [100,150,100]}}
+                    transition={{duration:10,repeat:Infinity}}
+                        className="max-w-sm w-64 rounded-t-[40px] rounded-br-[40px] shadow-2xl border-l-4 border-b-4 border-red-700" />
+                    </div>
 
         </div>
     )

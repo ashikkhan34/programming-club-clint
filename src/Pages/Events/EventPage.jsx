@@ -1,4 +1,5 @@
 import React, { useState } from 'react'
+import { Link } from 'react-router-dom';
 
 export default function EventPage({event}) {
     const [faqOpen, setFaqOpen] = useState(null);
@@ -15,7 +16,7 @@ export default function EventPage({event}) {
         <h1 className="text-5xl font-bold">{event.eventName}</h1>
         <p className="text-lg mt-2">🚀 Join this Event and Grow your Skills</p>
         <p className="mt-4 text-xl">📅 {event.registrationStart} | 📍 {event.placeName}</p>
-        <button className="mt-6 px-6 py-2 text-lg bg-yellow-400 text-black rounded-xl">Register Now</button>
+        <Link to='/registerEvent'><button className="mt-6 px-6 py-2 text-lg bg-yellow-400 text-black rounded-xl">Register Now</button></Link>
       </div>
       
       {/* About Section */}

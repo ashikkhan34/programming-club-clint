@@ -10,7 +10,7 @@ import { FaArrowAltCircleLeft, FaArrowAltCircleRight, FaDiscourse } from 'react-
 
 export default function Course() {
     return (
-        <div className='grid md:grid-cols-2 lg:grid-cols-3 gap-5 mx-auto p-8 bg-violet-100'>
+        <div className='grid md:grid-cols-2 lg:grid-cols-3 gap-5 mx-auto p-8 bg-indigo-900'>
             <div data-aos="fade-right" className="card bg-base-100  shadow-sm">
                 <figure>
                     <img

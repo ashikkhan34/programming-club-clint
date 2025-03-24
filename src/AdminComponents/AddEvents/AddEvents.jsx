@@ -36,60 +36,60 @@ export default function AddEvents() {
       }
     return (
         <div>
-            <div className='h-14 w-full text-center items-center bg-pink-100 flex justify-evenly'>
-                <h1 className='py-4 text-pink-950 font-bold'>Add an Event for out Club</h1>
-                <Link to='/dashboard/deleteEvent'><button className='btn bg-pink-200'>Customize Event Info</button></Link>
+            <div className='h-14 w-full text-center items-center bg-blue-800 flex justify-evenly'>
+                <h1 className='py-4 text-cyan-400 font-bold'>Add an Event for out Club</h1>
+                <Link to='/dashboard/deleteEvent'><button className='btn bg-blue-900 text-white'>Customize Event Info</button></Link>
             </div>
 
-            <div className='border-gray-300 p-4 rounded-xl w-full md:w-[600px] mx-auto shadow-2xl mt-10 '>
+            <div className='border-gray-300 bg-blue-900 px-8 rounded-xl w-full md:w-[600px] mx-auto shadow-2xl mt-10 '>
                 <form onSubmit={handleSubmit(onSubmit)}>
                     <label className="form-control w-full">
                         <div className="label">
                             <span className="label-text">Event Name*</span>
                         </div>
-                        <input type="text" placeholder=" EventName" className="input input-bordered w-full " {...register('eventName',{required:true})} />
+                        <input type="text" placeholder=" EventName" className="input input-bordered w-full bg-blue-950 text-white " {...register('eventName',{required:true})} />
                     </label>
                     <label className="form-control w-full">
                         <div className="label">
                             <span className="label-text">Place Name*</span>
                         </div>
-                        <input type="text" placeholder="Place Name" className="input input-bordered w-full " {...register('placeName',{required:true})} />
+                        <input type="text" placeholder="Place Name" className="input input-bordered w-full bg-blue-950 text-white " {...register('placeName',{required:true})} />
                     </label>
                     <label className="form-control w-full">
                         <div className="label">
                             <span className="label-text">Registration Deadline*</span>
                         </div>
-                        <input  type="date" placeholder="Registration Deadline" className="input input-bordered w-full " {...register('registrationDeadline',{required:true})} />
+                        <input  type="date" placeholder="Registration Deadline" className="input input-bordered w-full bg-blue-950 text-white " {...register('registrationDeadline',{required:true})} />
                     </label>
                     <label className="form-control w-full">
                         <div className="label">
                             <span className="label-text"> Hackathons Start*</span>
                         </div>
-                        <input type="date" placeholder="Hackathons Start" className="input input-bordered w-full " {...register('hackathonsStart',{required:true})} />
+                        <input type="date" placeholder="Hackathons Start" className="input input-bordered w-full bg-blue-950 text-white " {...register('hackathonsStart',{required:true})} />
                     </label>
                     <label className="form-control w-full">
                         <div className="label">
                             <span className="label-text"> Final Presentation & Awards*</span>
                         </div>
-                        <input type="date" placeholder="Final Presentation & Awards" className="input input-bordered w-full " {...register('finalResult',{required:true})} />
+                        <input type="date" placeholder="Final Presentation & Awards" className="input input-bordered w-full bg-blue-950 text-white " {...register('finalResult',{required:true})} />
                     </label>
                     <label className="form-control w-full">
                         <div className="label">
                             <span className="label-text"> 1st Price*</span>
                         </div>
-                        <input type="text" placeholder="Place Name" className="input input-bordered w-full " {...register('price1',{required:true})} />
+                        <input type="text" placeholder="Place Name" className="input input-bordered w-full bg-blue-950 text-white " {...register('price1',{required:true})} />
                     </label>
                     <label className="form-control w-full">
                         <div className="label">
                             <span className="label-text"> 2nd Price*</span>
                         </div>
-                        <input type="text" placeholder="Place Name" className="input input-bordered w-full " {...register('price2',{required:true})} />
+                        <input type="text" placeholder="Place Name" className="input input-bordered w-full bg-blue-950 text-white " {...register('price2',{required:true})} />
                     </label>
                     <label className="form-control w-full">
                         <div className="label">
                             <span className="label-text"> 3rd Price*</span>
                         </div>
-                        <input type="text" placeholder="Place Name" className="input input-bordered w-full " {...register('price3',{required:true})} />
+                        <input type="text" placeholder="Place Name" className="input input-bordered w-full bg-blue-950 text-white " {...register('price3',{required:true})} />
                     </label>
                     <label className="form-control w-full">
                         <div className="label">

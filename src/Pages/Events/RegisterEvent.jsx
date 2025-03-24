@@ -47,9 +47,9 @@ const AddMember = () => {
         console.log(res.data)
     }
     return (
-        <div >
+        <div className='pt-16 bg-indigo-950' >
             <div className='h-14 w-full text-center items-center bg-blue-800 flex justify-evenly'>
-                <h1 className='py-4 text-cyan-400 font-bold'>Add a Member for our Club</h1>
+                <h1 className='py-4 text-cyan-400 font-bold'>Register For Events</h1>
                 
                 <Link to='/dashboard/deleteMember'> <button className='btn bg-blue-900 text-white'>Customize Members Data</button></Link>
             </div>
@@ -61,41 +61,24 @@ const AddMember = () => {
                         </div>
                         <input type="text" placeholder=" name" className="input bg-blue-950 input-bordered w-full " {...register('name', { required: true })} />
                     </label>
+                    <label className="form-control w-full">
+                        <div className="label">
+                            <span className="label-text"> Email*</span>
+                        </div>
+                        <input type="text" placeholder=" Email" className="input bg-blue-950 input-bordered w-full " {...register('email', { required: true })} />
+                    </label>
                     <div className=' gap-3'>
-                        <label className="form-control w-full">
-                            <div className="label">
-                                <span className="label-text">Category*</span>
-                            </div>
-                            <select
-                                defaultValue='default'
-                                {...register('category', { required: true })}
-                                className="select select-ghost w-full bg-blue-950 ">
-                                <option disabled selected value='default'>Select a Title</option>
-                                <option value='President'>President</option>
-                                <option value='General Secretary'>General Secretary</option>
-                                <option value='Finance Director'>Finance Director</option>
-                                <option value='Deputy Finance Director'> Deputy Finance Director</option>
-                                <option value='Sponsor Organizing Secretary'>Sponsor Organizing Secretary</option>
-                                <option value='Co-Sponsor Organizing Secretary'>Co-Sponsor Organizing Secretary</option>
-                                <option value='Decoration Secretary'>Decoration Secretary</option>
-                                <option value='Co-Decoration Secretary'>Co-Decoration Secretary</option>
-                                <option value='Publication  Secretary'>Publication Secretary</option>
-                                <option value='Deputy Publication  Secretary'>Deputy Publication Secretary</option>
-                                <option value='Chief Graphic Designer'>Chief Graphic Designer</option>
-                                <option value='Assistant Graphic Designer'>Assistant Graphic Designer</option>
-                                <option value='Chief News Publisher'>Chief News Publisher</option>
-                                <option value='Assistant News Publisher'>Assistant News Publisher</option>
-                                <option value='Chief Photographer'>Chief Photographer</option>
-                                <option value='Chief Videographer'>Chief Videographer</option>
-                                <option value='Assistant Videographer'>Assistant Videographer</option>
-                                <option value='General Member'>General Member</option>
-                            </select>
-                        </label>
                         <label className="form-control w-full">
                             <div className="label">
                                 <span className="label-text">Student Position*</span>
                             </div>
                             <input type="number" placeholder="semester - ( 7 )" className="input input-bordered w-full bg-blue-950 " {...register('position', { required: true })} />
+                        </label>
+                        <label className="form-control w-full">
+                            <div className="label">
+                                <span className="label-text">Your Class Roll*</span>
+                            </div>
+                            <input type="number" placeholder="Your Class Roll" className="input input-bordered w-full bg-blue-950 " {...register('roll', { required: true })} />
                         </label>
                         <label className="form-control w-full">
                             <div className="label">
