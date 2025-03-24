@@ -23,14 +23,15 @@ const AddMember = () => {
         })
         if (res.data.success) {
             //now send the menu item data to the server with the image url
-            const membersInfo = {
+            const eventMembersInfo = {
                 name: data.name,
-                category: data.category,
+                email: data.email,
                 position: data.position,
                 department: data.department,
+                roll: data.roll,
                 image: res.data.data.display_url
             }
-            const memberInfo = await axiosSecure.post('/members', membersInfo)
+            const memberInfo = await axiosSecure.post('/eventMembers', eventMembersInfo)
             console.log(memberInfo.data)
             if (memberInfo.data.insertedId) {
                 reset()
@@ -51,9 +52,8 @@ const AddMember = () => {
             <div className='h-14 w-full text-center items-center bg-blue-800 flex justify-evenly'>
                 <h1 className='py-4 text-cyan-400 font-bold'>Register For Events</h1>
                 
-                <Link to='/dashboard/deleteMember'> <button className='btn bg-blue-900 text-white'>Customize Members Data</button></Link>
             </div>
-            <div className='border-gray-300 bg-blue-900 text-white p-4 rounded-xl w-full md:w-[600px] mx-auto shadow-2xl mt-10 '>
+            <div className='border-gray-300 bg-blue-900  text-white p-4 rounded-xl w-full md:w-[600px] mx-auto shadow-2xl mt-10 '>
                 <form onSubmit={handleSubmit(onSubmit)}>
                     <label className="form-control w-full">
                         <div className="label">

@@ -17,6 +17,7 @@ export default function Dashboard() {
                     <li><NavLink to='/dashboard/addEvents' className='flex items-center gap-2'><MdEmojiEvents /> Add an Events </NavLink></li>
                     <li><NavLink to='/dashboard/addProject' className='flex items-center gap-2'><PiProjectorScreenFill /> Add Projects </NavLink></li>
                     <li><NavLink to='/dashboard/addBlog' className='flex items-center gap-2'><PiProjectorScreenFill /> Add Photo </NavLink></li>
+                    <li><NavLink to='/dashboard/eventMembers'> <FaUsers></FaUsers> EventMembers</NavLink></li>
 
                     {/* shared nav link */}
                     <div className="divider divider-info"></div>

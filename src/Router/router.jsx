@@ -25,6 +25,7 @@ import ReviewMore from "../Components/Review/ReviewMore";
 import Error from "../Components/Error/Error";
 import PrivateRoute from "../Components/PrivateRoute/PrivateRoute";
 import AdminRoute from "../Components/AdminRoute/AdminRoute";
+import EventMembers from "../Dashborad/EventMembers/EventMembers";
 
 const router = createBrowserRouter([
     {
@@ -123,6 +124,10 @@ const router = createBrowserRouter([
           path:'updateEvent/:id',
           element:<AdminRoute><UpdateEvent></UpdateEvent></AdminRoute>,
           loader:({params})=>fetch(`http://localhost:4000/events/${params.id}`)
+        },
+        {
+          path:'eventMembers',
+          element:<EventMembers></EventMembers>
         }
       ]
     }
