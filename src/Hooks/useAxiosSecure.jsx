@@ -3,7 +3,7 @@ import { useNavigate } from 'react-router-dom';
 import useAuth from './useAuth';
 
 export const axiosSecure = axios.create({
-    baseURL:'http://localhost:4000'
+    baseURL:'https://programming-club-ppi-server.vercel.app'
 })
 
 const useAxiosSecure = () => {

@@ -114,7 +114,7 @@ const router = createBrowserRouter([
         {
           path:'updateMember/:id',
           element:<AdminRoute><UpdateMember></UpdateMember></AdminRoute>,
-          loader:({params})=>fetch(`http://localhost:4000/members/${params.id}`)
+          loader:({params})=>fetch(`https://programming-club-ppi-server.vercel.app/members/${params.id}`)
         },
         {
           path:'deleteEvent',
@@ -123,7 +123,7 @@ const router = createBrowserRouter([
         {
           path:'updateEvent/:id',
           element:<AdminRoute><UpdateEvent></UpdateEvent></AdminRoute>,
-          loader:({params})=>fetch(`http://localhost:4000/events/${params.id}`)
+          loader:({params})=>fetch(`https://programming-club-ppi-server.vercel.app/events/${params.id}`)
         },
         {
           path:'eventMembers',
